@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>jQuery smooth-scrolling Demo</title>
+<script src="https://code.jquery.com/jquery-3.2.0.min.js"></script>
+<script>
+$(document).ready(function(){
+	jQuery('.navigation a').on( 'click', function(event) {
+		var target 	= jQuery( this );
+		var element = target.attr('href');
+
+		jQuery('.navigation a').removeClass('active')
+		target.addClass('active');
+
+		jQuery("body, html").animate({ 
+		  scrollTop: jQuery( element ).offset().top - 90	
+		}, 800);
+
+	});
+});
+
+</script>
+<style>
+* {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	font-size: 16px;		
+	background: #eee;
+	padding-top: 90px;
+	font-family: 'Roboto',Arial, Helvetica, Sans-serif;
+  overflow-x:hidden;
+}
+
+.navigation {
+	top: 0;
+	left: 0;
+	padding: 0 10%;
+	width: 100%;
+	position: fixed;
+	color: #fff;
+	box-sizing: border-box;
+	background: #363636;
+	text-align: center;
+}
+.navigation a {
+	color: inherit;
+	margin: 35px 5px;
+	line-height: 150%;	
+	padding: 0 5px 0 20px;
+	display: inline-block;
+	text-decoration: none;
+	border-left: 1px solid #fff;
+} 
+.navigation a.active { color: yellow; }
+.navigation a:first-child { border: 0; }
+.box {
+	width: 100vw;
+	height: 100vh;
+	font-size: 14vw;
+	padding-top: 100px;
+	text-align: center;	
+	background: #4CD2DA;
+}
+.box:nth-child(2) { background: #59DAE2; }
+.box:nth-child(3) { background: #4372A6; }
+.box:nth-child(4) { background: #D8E0E3; }
+.box:nth-child(5) { background: #4B565A; }
+</style>
+</head>
+<body>
+	
+	<nav class="navigation">
+		<a class="active" href="#about" title="About">About</a>
+		<a href="#work" title="Work">Work</a>
+		<a href="#clients" title="Clients">Clients</a>
+		<a href="#blogs" title="Blogs">Blogs</a>
+		<a href="#contact" title="Contact">Contact</a>
+	</nav>
+	
+	<div id="container">
+		<div id="about" class="box">
+			01
+		</div>
+		<div id="work" class="box">
+			02
+		</div>
+		<div id="clients" class="box">
+			03
+		</div>
+		<div id="blogs" class="box">
+			04
+		</div>
+		<div id="contact" class="box">
+			05
+		</div>
+	</div>
+    
+</body>
+</html>
