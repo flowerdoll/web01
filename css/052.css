@@ -31,7 +31,7 @@ img {
 /* header */
 
 header {
-    width: 100%;
+    width: 1440px;
     height: 100px;
     line-height: 100px;
     margin: 0 auto;
@@ -101,7 +101,7 @@ header nav ul li {
 /* cont01 */
 
 .cont01 .inner {
-    width: 100%;
+    width: 1440px;
     margin: 100px auto;
 }
 
